@@ -1,0 +1,26 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel server/src -d server/lib",
+    "start:dev": "npm run watch:server",
+    "start:server": "node server/lib/index.js",
+    "watch:server": "nodemon --watch server/src --exec \"npm run babel && npm run start:server\"",
+    "begin:server": "npm run babel && nodemon --watch server/src --exec "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
+}
